@@ -1,0 +1,67 @@
+<div *ngIf="!movie" class="text-center mt-5 text-danger">
+    <h3 class="mt-5">Loading...</h3>
+    <img class="mt-5" src="../../../assets/images/loading.gif" alt="loading...">
+</div>
+
+
+<div class="row mt-5" *ngIf="movie">
+
+    <div class="col-md-4">
+        <img [src]="movie.Poster" alt="movie.Title" class="img img-thumbnail mt-2">
+    </div>
+    <div class="col-md-8">
+        <h3>{{movie.Title}}</h3>
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <td>Director</td>
+                    <td>{{movie.Director}}</td>
+                </tr>
+                <tr>
+                    <td>Production</td>
+                    <td>{{movie.Production}}</td>
+                </tr>
+                <tr>
+                    <td>Release</td>
+                    <td>{{movie.Released}}</td>
+                </tr>
+                <tr>
+                    <td>Plot</td>
+                    <td>{{movie.Plot}}</td>
+                </tr>
+
+                <tr>
+                    <td>Genre</td>
+                    <td>{{movie.Genre}}</td>
+                </tr>
+                <tr>
+                    <td>Actors</td>
+                    <td>{{movie.Actors}}</td>
+                </tr>
+                <tr>
+                    <td>Awards</td>
+                    <td>{{movie.Awards}}</td>
+                </tr>
+                <tr>
+                    <td>Ratings</td>
+                    <td>Imdb Rating: {{movie.imdbRating}} &nbsp;   {{ movie.Ratings.length > 1 ? &nbsp; 'Rotten Tomatoes: ' + movie.Ratings[1].Value : '' }} &nbsp;  {{movie.Metascore !== 'N/A' ? 'Metacritic: ' + movie.Metascore : '' }}</td>
+                </tr>
+                <tr>
+                    <td>BoxOffice</td>
+                    <td>{{movie.BoxOffice}}</td>
+                </tr>
+                <tr>
+                    <button class="btn btn-primary mt-2 ml-2 mb-2" (click) = "goBack()">Back</button>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    
+
+
+
+
+</div>

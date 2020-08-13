@@ -1,0 +1,16 @@
+<div class="alert alert-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 style="cursor:pointer;" [routerLink]="['/home']">Movie Browser</h3>
+            </div>
+            <div class="col-md-9">
+                <form (submit)="submit($event)">
+                    <input type="text" name="query" [(ngModel)]="query" autofocus placeholder="search movies..." class="form-control">
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
